@@ -17,6 +17,7 @@ import android.widget.Button;
 //        shared elements:用于决定在两个Activity之间切换时，指定两个Activity中对应的View的过渡效果
 public class MainActivity extends AppCompatActivity {
     private Button button1;
+    private Button button2;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,17 +26,32 @@ public class MainActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_main);
         button1 = (Button) findViewById(R.id.button1);
-        Transition explode = TransitionInflater.from(this).inflateTransition(R.transition.explode);
-        //退出时使用
-        getWindow().setExitTransition(explode);
-        //第一次进入时使用
-        getWindow().setEnterTransition(explode);
-        //再次进入时使用
-        getWindow().setReenterTransition(explode);
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Transition explode = TransitionInflater.from(MainActivity.this).inflateTransition(R.transition.explode);
+                //退出时使用
+                getWindow().setExitTransition(explode);
+                //第一次进入时使用
+                getWindow().setEnterTransition(explode);
+                //再次进入时使用
+                getWindow().setReenterTransition(explode);
                 Intent intent = new Intent(MainActivity.this,Main2Activity.class);
+                startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(MainActivity.this).toBundle());
+            }
+        });
+        button2 = (Button) findViewById(R.id.button2);
+        button2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Transition slide = TransitionInflater.from(MainActivity.this).inflateTransition(R.transition.slide);
+                //退出时使用
+                getWindow().setExitTransition(slide);
+                //第一次进入时使用
+                getWindow().setEnterTransition(slide);
+                //再次进入时使用
+                getWindow().setReenterTransition(slide);
+                Intent intent = new Intent(MainActivity.this,Main3Activity.class);
                 startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(MainActivity.this).toBundle());
             }
         });
