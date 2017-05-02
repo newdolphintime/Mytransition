@@ -21,4 +21,11 @@
         android:layout_height="wrap_content"
         android:text="点我跳转(Slide效果)"
         android:id="@+id/button2"/>
+    <View
+        android:id="@+id/firstSharedView"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="#00cc00"
+        android:onClick="onClick"
+        android:transitionName="sharedView" />
 </LinearLayout>
