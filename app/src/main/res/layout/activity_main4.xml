@@ -16,4 +16,12 @@
         android:background="#00cc00"
 
         android:transitionName="sharedView" />
+    <View
+
+        android:id="@+id/secondSharedView"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="#446699"
+        android:onClick="onClick"
+        android:transitionName="secondsharedView" />
 </RelativeLayout>

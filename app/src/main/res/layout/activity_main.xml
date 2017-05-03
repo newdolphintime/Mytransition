@@ -21,11 +21,29 @@
         android:layout_height="wrap_content"
         android:text="点我跳转(Slide效果)"
         android:id="@+id/button2"/>
-    <View
-        android:id="@+id/firstSharedView"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:background="#00cc00"
-        android:onClick="onClick"
-        android:transitionName="sharedView" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <View
+            android:id="@+id/firstSharedView"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="#00cc00"
+            android:onClick="onClick"
+            android:transitionName="sharedView" />
+        <View
+            android:layout_alignParentRight="true"
+            android:id="@+id/secondSharedView"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="#446699"
+            android:onClick="onClick"
+            android:transitionName="secondsharedView" />
+    </RelativeLayout>
+    <Button
+        android:id="@+id/pathbutton"
+        android:text="点我（有轨迹）"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 </LinearLayout>
